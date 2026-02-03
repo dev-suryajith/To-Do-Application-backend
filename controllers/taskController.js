@@ -53,7 +53,7 @@ exports.getAllTasks = async (req, res) => {
 exports.updateTask = async (req, res) => {
     console.log('Inside updateTask');
 
-    const { taskName, taskDescription, priority, dueDate } = req.body
+    const { taskName, taskDescription, priority, dueDate, status } = req.body
     const userMail = req.payload
     console.log(userMail)
     try {
@@ -62,7 +62,7 @@ exports.updateTask = async (req, res) => {
             return res.status(404).json('User not found')
         }
 
-        const updatedTask = await tasks.findOneAndUpdate({ taskName, userMail }, { taskName, taskDescription, priority, dueDate, userMail }, { new: true })
+        const updatedTask = await tasks.findOneAndUpdate({ taskName, userMail }, { taskName, taskDescription, priority, dueDate, userMail, status    }, { new: true })
         if (updatedTask) {
             res.status(201).json(updatedTask)
         }
