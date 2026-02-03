@@ -104,10 +104,10 @@ Authentication
 
 Tasks (Protected Routes)
 
-* POST /tasks – Create a new task
-* GET /tasks – Get all tasks for logged-in user
-* PUT /tasks/:id – Update a task
-* DELETE /tasks/:id – Delete a task
+* POST /addNewTask – Create a new task
+* GET /getAllTasks – Get all tasks for logged-in user
+* PUT /updateTask – Update a task
+* DELETE /deleteTask/:id – Delete a task
 
 🔒 Security Notes
 
